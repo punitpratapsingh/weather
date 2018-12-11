@@ -10,13 +10,13 @@ let humidity = document.getElementById("humidity-div");
 searchButton.addEventListener("click", findWeatherDetails);
 searchInput.addEventListener("keyup", enterPressed);
 
-function enterPressed(event) {
+enterPressed=(event) => {
   if (event.key === "Enter") {
     findWeatherDetails();
   }
 }
 
-function findWeatherDetails() {
+findWeatherDetails =() => {
   if (searchInput.value === "") {
   
   }else {
@@ -25,7 +25,7 @@ function findWeatherDetails() {
   }
  }
 
-function theResponse(response) {
+theResponse=(response) => {
   let jsonObject = JSON.parse(response);
   cityName.innerHTML = jsonObject.name;
   icon.src = "http://openweathermap.org/img/w/" + jsonObject.weather[0].icon + ".png";
@@ -33,7 +33,7 @@ function theResponse(response) {
   humidity.innerHTML = jsonObject.main.humidity + "%";
 }
 
-function httpRequestAsync(url, callback)
+httpRequestAsync=(url, callback) =>
 {
   console.log("hello");
     var httpRequest = new XMLHttpRequest();
